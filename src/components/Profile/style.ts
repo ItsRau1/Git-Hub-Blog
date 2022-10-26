@@ -8,7 +8,7 @@ export const ProfileContainer = styled.div`
     align-items: center;
     background: ${props=>props.theme["base-profile"]};
     border-radius: 10px;
-    margin: 2rem 0;
+    margin: 1.99rem 0;
 
 `
 export const ProfileImage = styled.section`
