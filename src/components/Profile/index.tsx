@@ -1,15 +1,40 @@
-import { ArrowSquareOut, Buildings, MapPinLine, TwitterLogo, Users } from "phosphor-react";
-import { HeaderProfile, HeaderProfileToSearch, MainInfoToSearch, ProfileContainer, ProfileContainerToSearch, ProfileContent, ProfileContentToSearch, ProfileImage, ProfileImageToSearch, StatsToSearch, ToRedirect } from "./style";
-import { useContext, useEffect, useState } from "react";
-import { TransactionsContext } from "../../contexts/Context";
+import { 
+    useContext, 
+    useEffect, 
+} from "react";
+
+import { 
+    ArrowSquareOut, 
+    Buildings, 
+    MapPinLine, 
+    TwitterLogo, 
+    Users 
+} from "phosphor-react";
+
+import { 
+    HeaderProfile, 
+    HeaderProfileToSearch, 
+    MainInfoToSearch, 
+    ProfileContainer, 
+    ProfileContainerToSearch, 
+    ProfileContent, 
+    ProfileContentToSearch, 
+    ProfileImage, 
+    ProfileImageToSearch, 
+    StatsToSearch, 
+    ToRedirect 
+} from "./style";
+
+import { 
+    TransactionsContext 
+} from "../../contexts/Context";
 
 export function Profile () {
-
 
     const { Consume, profiles } = useContext(TransactionsContext)
 
     useEffect(()=> {
-    Consume()
+        Consume()
     }, [])
     
 

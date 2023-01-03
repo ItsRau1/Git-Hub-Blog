@@ -15,7 +15,7 @@ export function SearchForm () {
     const { fetchTransactions } = useContext(TransactionsContext)
 
     const { register, handleSubmit, reset } = useForm();
-    const onSubmit: SubmitHandler = data => { 
+    const onSubmit:SubmitHandler<any> = (data) => { 
         fetchTransactions(data)
         reset()
     }

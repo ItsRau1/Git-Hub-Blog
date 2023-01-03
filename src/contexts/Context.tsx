@@ -5,14 +5,17 @@ interface TransactionsProvidierProps{
     children: ReactNode
 }
 
-interface DataObject {
-  data: {
-    toSearch: string
-  },
+interface DataObject{
   toSearch: string,
 }
 
-export const TransactionsContext = createContext({})
+interface ContextType{
+  Consume: () => void,
+  profiles: string[],
+  fetchTransactions: (data:DataObject) => void,
+}
+
+export const TransactionsContext = createContext({} as ContextType)
 
 export function TransactionProvidier ({children}: TransactionsProvidierProps) {
 
@@ -23,7 +26,7 @@ export function TransactionProvidier ({children}: TransactionsProvidierProps) {
         setProfiles(response.data)
     }
 
-    async function fetchTransactions(data?: DataObject) {
+    async function fetchTransactions(data:DataObject) {
         const query = data.toSearch
 
         const response = await api.get(`/${query}`)
